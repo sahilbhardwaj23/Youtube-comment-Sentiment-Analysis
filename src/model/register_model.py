@@ -4,7 +4,10 @@ import json
 import mlflow
 import logging
 import os
+import dagshub
 
+
+dagshub.init(repo_owner='sahilbhardwaj23', repo_name='Youtube-comment-Sentiment-Analysis', mlflow=True)
 # Set up MLflow tracking URI
 mlflow.set_tracking_uri("https://dagshub.com/sahilbhardwaj23/Youtube-comment-Sentiment-Analysis.mlflow")
 

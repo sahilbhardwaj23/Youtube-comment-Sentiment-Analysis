@@ -11,6 +11,10 @@ import os
 import matplotlib.pyplot as plt
 import seaborn as sns
 import json
+import dagshub
+from mlflow.tracking import MlflowClient
+
+
 
 # logging configuration
 logger = logging.getLogger('model_evaluation')
@@ -40,6 +44,26 @@ def load_data(file_path: str) -> pd.DataFrame:
     except Exception as e:
         logger.error('Error loading data from %s: %s', file_path, e)
         raise
+
+def set_or_create_experiment(experiment_name):
+    client = MlflowClient()
+    experiment = client.get_experiment_by_name(experiment_name)
+
+    # Check if the experiment exists and is active
+    if experiment:
+        if experiment.lifecycle_stage == "active":
+            print(f"Using existing experiment '{experiment_name}' (ID: {experiment.experiment_id})")
+            mlflow.set_experiment(experiment_name)
+        else:
+            # Restore if it's deleted
+            print(f"Restoring deleted experiment '{experiment_name}' (ID: {experiment.experiment_id})")
+            client.restore_experiment(experiment.experiment_id)
+            mlflow.set_experiment(experiment_name)
+    else:
+        # Create a new experiment if it doesn't exist
+        print(f"Creating new experiment '{experiment_name}'")
+        mlflow.set_experiment(experiment_name)
+
 
 
 def load_model(model_path: str):
@@ -126,10 +150,11 @@ def save_model_info(run_id: str, model_path: str, file_path: str) -> None:
 
 
 def main():
+    dagshub.init(repo_owner='sahilbhardwaj23', repo_name='Youtube-comment-Sentiment-Analysis', mlflow=True)
     #Set up the MLflow tracking server
     mlflow.set_tracking_uri("https://dagshub.com/sahilbhardwaj23/Youtube-comment-Sentiment-Analysis.mlflow")
 
-    mlflow.set_experiment('dvc-pipeline-runs')
+    set_or_create_experiment('dvc-pipeline-runs')
     
     with mlflow.start_run() as run:
         try:
