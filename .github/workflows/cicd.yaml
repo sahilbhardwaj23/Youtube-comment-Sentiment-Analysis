@@ -26,6 +26,11 @@ jobs:
         run: |           
           pip install -r requirements.txt       
 
+      - name: Install DVC
+        run: |
+          python -m pip install --upgrade pip
+          pip install dvc
+          
       - name: Configure DVC for DagsHub
         env:
           DAGSHUB_USERNAME: ${{ secrets.DAGSHUB_USERNAME }}
