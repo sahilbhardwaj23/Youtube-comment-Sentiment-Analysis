@@ -1,4 +1,6 @@
 [core]
-    remote = myremote
+    remote = origin
 ['remote "myremote"']
     url = https://dagshub.com/sahilbhardwaj23/Youtube-comment-Sentiment-Analysis
+['remote "origin"']
+    url = https://dagshub.com/sahilbhardwaj23/Youtube-comment-Sentiment-Analys
