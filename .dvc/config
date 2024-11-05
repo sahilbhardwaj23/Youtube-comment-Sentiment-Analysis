@@ -1,6 +1,6 @@
 [core]
-    remote = dagshub-remote
+    remote = myremote
 ['remote "myremote"']
-    url = C:\Users\Lenovo\AppData\Local\Temp
+    url = https://dagshub.com/sahilbhardwaj23/Youtube-comment-Sentiment-Analysis.dvc
 ['remote "dagshub-remote"']
     url = https://dagshub.com/sahilbhardwaj23/Youtube-comment-Sentiment-Analysis.dvc
