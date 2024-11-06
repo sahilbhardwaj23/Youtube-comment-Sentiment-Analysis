@@ -1,4 +1,4 @@
 [core]
-    remote = origin
-['remote "origin"']
+    remote = myremote
+['remote "myremote"']
     url = https://dagshub.com/sahilbhardwaj23/Youtube-comment-Sentiment-Analysis
