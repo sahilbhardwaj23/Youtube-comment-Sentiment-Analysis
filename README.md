@@ -10,7 +10,7 @@ This project involves a **Chrome plugin** that performs sentiment analysis on Yo
   - [How to Use with Postman](#how-to-use-with-postman)
   - [Flask API Setup](#flask-api-setup)
 - [Running the Project Locally](#running-the-project-locally)
-- [License](#license)
+
 
 ## Project Overview
 
@@ -27,7 +27,8 @@ The backend API is built using **Flask**, and the communication between the fron
 - **LightGBM, XGBoost, TF-IDF** - Machine learning models and feature extraction techniques
 - **Postman** - Tool used to test and interact with the API
 - **HTML, JavaScript** - Frontend of the Chrome plugin (Not covered here)
-- **Chrome Extension** - User interface for interacting with the sentiment analysis service -`https://github.com/sahilbhardwaj23/youtube-comment-Chrome-Plugin`
+- **Chrome Extension** - User interface for interacting with the sentiment analysis service -
+  [Frontend Repo](https://github.com/sahilbhardwaj23/youtube-comment-Chrome-Plugin)
 
 ## Backend API
 
