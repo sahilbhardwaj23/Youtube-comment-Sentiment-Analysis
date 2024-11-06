@@ -1,6 +1,6 @@
 # YouTube Comment Sentiment Analysis Chrome Plugin
 
-This project involves a **Chrome plugin** that performs sentiment analysis on YouTube comments, determining whether the comment is **positive**, **negative**, or **neutral**. The backend of the project is built using **Flask**, providing a RESTful API that handles requests from the frontend (Chrome plugin) and processes the sentiment analysis.
+This project involves a **Chrome plugin** that performs sentiment analysis on YouTube comments, determining whether the comment is **positive**, **negative**, or **neutral**. The backend of the project is built using **Flask**, providing a RESTful API that handles requests from the frontend [(Chrome plugin)](https://github.com/sahilbhardwaj23/youtube-comment-Chrome-Plugin) and processes the sentiment analysis.
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -27,8 +27,8 @@ The backend API is built using **Flask**, and the communication between the fron
 - **LightGBM, XGBoost, TF-IDF** - Machine learning models and feature extraction techniques
 - **Postman** - Tool used to test and interact with the API
 - **HTML, JavaScript** - Frontend of the Chrome plugin (Not covered here)
-- **Chrome Extension** - User interface for interacting with the sentiment analysis service -
-  [Frontend Repo](https://github.com/sahilbhardwaj23/youtube-comment-Chrome-Plugin)
+- **Chrome Extension** - User interface for interacting with the sentiment analysis service 
+ 
 
 ## Backend API
 
